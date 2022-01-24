@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de idade</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="foto.js" defer></script>
+</head>
+<body>
+    <h1>Verificador de Idade</h1>
+    <div id="principal">
+        Ano de nascimento
+        <input type="number" name="txtn1" id="nasci">
+       
+        <p>Sexo
+        <input type="radio" name="OP" id="masc" value="masc">Masculino
+        <input type="radio" name="OP" id="fem" value="fem">Feminino
+        </p>
+        <input type="button" value="Verificar" onclick="criidade()">
+        <p id="rodape">Preencha os dados acima para ver o resultado</p>
+
+        <p id="descidade"></p>
+        <img id="foto" src="" alt="">
+    </div>
+</body>
+</html>
