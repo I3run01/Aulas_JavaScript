@@ -1,10 +1,11 @@
 function tabuada() {
-    var numero = Number(document.querySelector('#numero').value)
+    var numeroS = document.querySelector('#numero').value
+    var numero = Number(numeroS)
     var conta = document.querySelector('#conta')
     var c = 1
     var comp = ''
     var texto = ''
-    if (numero == String()) {
+    if (numeroS == String('')) {
         window.alert('Número inválido, coloque outro')
     } else {
         for (1; c <= 10 ; c++) {
