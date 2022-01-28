@@ -6,9 +6,12 @@ function contar() {
     var c = inicio
     var comp = '  ' + String.fromCodePoint(0x1F449);
     var texto = String(inicio)
-    if (passo == 0 || fim <= 0 || fim < inicio) {
+    if ( fim <= 0 || fim < inicio) {
         cont.innerHTML = 'Impossível contar'
     }else {
+        if(passo == 0) {
+            passo = 1
+        }
         for (inicio = 0; c < (fim-1); passo) {
             c = c + passo
             texto = texto + comp +  String(c)
