@@ -45,3 +45,11 @@ header {
     margin: 10px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+#respdiv {
+    margin: 0px;
+    width: 450px;
+    border-radius: 0px;
+    padding: 0px;
+    display: none;
+}
