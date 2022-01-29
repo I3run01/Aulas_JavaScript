@@ -34,8 +34,6 @@ function adicionar() {
                 }     
             }soma = Number(soma) + Number(listaval[c])
         }media = soma/tam
-    
-        
         
         resp.innerHTML = `
         Ao todo temos ${tam} números cadastrados. </br></br>
@@ -44,18 +42,15 @@ function adicionar() {
         A soma de todos os valores é igual a ${soma}.</br></br>
         A média de todos os valores é igual a ${media}.
         `
-
     }
 
     else {
         texto.innerHTML = 'Número inválido!'
     }
-
-}
-
-function finalizar() {
+}function finalizar() {
     var respdiv = document.getElementById('respdiv')
 
     
     respdiv.style.display = 'block'
 }
+
