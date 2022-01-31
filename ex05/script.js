@@ -1,14 +1,24 @@
 var listatxt = [''];
 var listaval = [''];
 
+function notinlist(num, list) {
+    sit = 'true'
+    for (var c = 0; c <= list.length; c++) {
+         if (num == list[c]) {
+             sit = 'false'
+         }
+    } return sit
+}
+
 function adicionar() {
     var numeroS = document.querySelector('#numero').value
     var numero = Number(numeroS)
     var texto = document.querySelector('#texto')
     var resp = document.querySelector('#resp')
     var tam = listatxt.length
+    var sit = notinlist(numero, listaval)
 
-    if (numero >= 1 && numero <= 100) {
+    if (numero >= 1 && numero <= 100 && sit == 'true') {
         listatxt.push(listatxt[tam-1] + `O Valor ${numero} foi adicionado </br>`)
         listaval.push(numero) 
     
