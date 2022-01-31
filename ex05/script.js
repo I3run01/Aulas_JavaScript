@@ -17,6 +17,8 @@ function adicionar() {
     var resp = document.querySelector('#resp')
     var tam = listatxt.length
     var sit = notinlist(numero, listaval)
+    var respdiv = document.getElementById('respdiv')
+    respdiv.style.display = 'none'
 
     if (numero >= 1 && numero <= 100 && sit == 'true') {
         listatxt.push(listatxt[tam-1] + `O Valor ${numero} foi adicionado </br>`)
@@ -59,8 +61,6 @@ function adicionar() {
     }
 }function finalizar() {
     var respdiv = document.getElementById('respdiv')
-
-    
     respdiv.style.display = 'block'
 }
 
