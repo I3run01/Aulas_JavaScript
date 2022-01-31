@@ -55,7 +55,7 @@ function adicionar() {
     }
 
     else {
-        texto.innerHTML = 'Número inválido!'
+        window.alert('Número inválido!')
     }
 }function finalizar() {
     var respdiv = document.getElementById('respdiv')
