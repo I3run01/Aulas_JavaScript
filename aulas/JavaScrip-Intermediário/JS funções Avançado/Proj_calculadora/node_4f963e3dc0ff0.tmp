@@ -1,0 +1,32 @@
+listaconsole = ['f', '3', '+','3','*', '[', '+', '5', '-', '2',']','+', '5']
+
+console.log(listaconsole)
+var abrecof = listaconsole.indexOf('[')
+var fechacof = listaconsole.indexOf(']')
+while (abrecof>=0) {
+    var abreco = listaconsole.indexOf('[')
+    var abreco1 = abreco + 1
+    var contabreco = 1
+    var contfechaco = 0
+    for (abreco1; contabreco != contfechaco; abreco1++) {
+        if (listaconsole[abreco1] == '[') {
+            var abc = 1
+        } 
+        else { var abc = 0}
+        if(listaconsole[abreco1]) {
+            var fcc = 1
+        }
+        else { var fcc = 0}
+        contabreco = contabreco + abc
+        contfechaco = contfechaco + fcc
+    }
+    listaconsole[abrecof] = '('
+    listaconsole[fechacof] = ')'
+    abrecof = listaconsole.indexOf('(')
+    fechacof = listaconsole.indexOf(')')
+
+}
+    
+
+
+console.log(listaconsole)
