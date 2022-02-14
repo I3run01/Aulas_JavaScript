@@ -45,7 +45,6 @@ principal('1')
 principal('+')
 principal('3')
 principal('+')
-principal('(')
 principal('5')
 principal('+')
 principal('8')
@@ -55,16 +54,14 @@ principal('-')
 principal('9')
 principal('0')
 principal('*')
-principal('(')
 principal('7')
 principal('/')
 principal('6')
 principal('+')
 principal('4')
-principal(')')
 principal('+')
 principal('7')
-principal(')')
+
 
 /*funções auxiliares*/
 function isNumber(a) {
@@ -127,74 +124,8 @@ function principal(a) {
     for (var c = 0; c < tam; c++) {
         equacaouser = equacaouser+listauser[c]
     }
-    
-
     /*
     texto.innerHTML = equacaouser
     */
 }
-
 console.log(listaconsole)
-manipulacao(listaconsole)
-function manipulacao(listaconsole) {
-    var abrePa = listaconsole.indexOf('(')
-    
-    
-    while (abrePa >= 0) {
-        listaconsole[abrePa] = '{'
-        if ((listaconsole[abrePa-1] == '+') || (listaconsole[abrePa] -1 == '-')) {
-            listaconsole.splice(abrePa,0,'1','*')
-        }
-        
-        var abrePa = listaconsole.indexOf('(')
-    }
-
-    var fechaPa = listaconsole.indexOf(')')
-    while (fechaPa >= 0) {
-        listaconsole[fechaPa] = '}'
-        
-        if ((listaconsole[fechaPa+1] == '+') || (listaconsole[fechaPa] +1 == '-')) {
-            listaconsole.splice(fechaPa+1,0,'*','1')
-        }
-        
-        var fechaPa = listaconsole.indexOf(')')
-    }
-    
-
-
-
-    
-    var abrecha = listaconsole.indexOf('{')
-    while (abrecha>=0){
-        if (isNumber(listaconsole[abrecha+1]) == 'true') {
-            listaconsole.splice(abrecha+1,0,'+')
-        }
-        listaconsole[abrecha] = '['
-        abrecha = listaconsole.indexOf('{')
-    }
-
-    var fechacha = listaconsole.indexOf('}')
-    while (fechacha>=0){
-        listaconsole[fechacha] = ']'
-        fechacha = listaconsole.indexOf('}')
-    }
-
-    /*
-    var abreco = listaconsole.indexOf('[')
-    var abreco1 = abreco + 1
-    var contabreco = 1
-    var contfechaco = 0
-    for (abreco1; contabreco != contfechaco; abreco1++) {
-        if (listaconsole[abreco1] == '[') {
-            var abc = 1
-        } 
-        else { var fcc = 1}
-        contabreco = contabreco + abc
-        contfechaco = contfechaco + fcc
-    }
-    */ 
-    console.log(listaconsole) 
-}
-
-
-
