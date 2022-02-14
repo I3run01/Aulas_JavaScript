@@ -22,30 +22,43 @@ function dividir() {principal('/')}
 function abrepa() {principal('(')}
 function fechapa() {principal('(')}
 function apaga() {
-    if (lista.length <= 1){
-        this.lista = []
+    if (listauser.length <= 1){
+        this.listauser = []
         principal('')
     }
     else {
-        this.lista.pop()
-        var elemf = lista[lista.length-1]
-        this.lista.pop()
+        this.listauser.pop()
+        var elemf = listauser[listauser.length-1]
+        this.listauser.pop()
         principal(elemf)
     }
     
 }
 function reseta() {
-    this.lista = []
+    this.listauser = []
     principal('')
 }
+
+function porcentagem() {
+    principal('%')
+}
 */
+
+
+
 
 principal('2')
 principal('1')
 principal('+')
 principal('3')
+principal('.')
+principal('5')
 principal('+')
 principal('5')
+principal('*')
+principal('8')
+principal('*')
+principal('1')
 principal('+')
 principal('8')
 principal('*')
@@ -59,6 +72,9 @@ principal('/')
 principal('6')
 principal('+')
 principal('4')
+principal('0')
+principal('0')
+principal('%')
 principal('+')
 principal('7')
 
@@ -69,6 +85,7 @@ function isNumber(a) {
     var ver = 'true'
     for (var c of a) {
         if (
+            c === '.' ||
             c === '0' ||
             c ===  '1' ||
             c ===  '2' ||
@@ -128,4 +145,36 @@ function principal(a) {
     texto.innerHTML = equacaouser
     */
 }
-console.log(listaconsole)
+listaconsole.splice(0,1)
+var equacaoconsole = ''
+for (var c = 0; c < listaconsole.length; c++) {
+    equacaoconsole = equacaoconsole+listaconsole[c]
+}
+console.log(equacaoconsole)
+conta = equacaoconsole.split('+')
+for(var c = 0; c < conta.length; c++) {
+    conta[c] = conta[c].split('-')
+    for (var d = 0; d < conta[c].length; d++) {
+        conta[c][d] = conta[c][d].split('/')
+        for (var e = 0; e < conta[c][d].length;e++) {
+            conta[c][d][e] = conta[c][d][e].split('*')
+            for (var f = 0; f < conta[c][d][e].length; f++) {
+                
+                const ulttermo = conta[c][d][e][f].length-1
+                if (conta[c][d][e][f][ulttermo] == '%') {
+                    conta[c][d][e][f] = conta[c][d][e][f].pop()
+                    conta[c][d][e][f] = (Number(conta[c][d][e][f]).value)/100
+                }
+                
+                console.log(conta[c][d][e][f])
+                console.log(conta[c][d][e][f][ulttermo])
+                console.log(ulttermo)
+                console.log('')
+            }
+        }
+    }
+}
+
+
+console.log(equacaoconsole)
+console.log(conta)
