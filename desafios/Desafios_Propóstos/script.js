@@ -162,13 +162,14 @@ for(var c = 0; c < conta.length; c++) {
                 
                 const ulttermo = conta[c][d][e][f].length-1
                 if (conta[c][d][e][f][ulttermo] == '%') {
-                    conta[c][d][e][f] = conta[c][d][e][f].pop()
-                    conta[c][d][e][f] = (Number(conta[c][d][e][f]).value)/100
+                    const str = conta[c][d][e][f].substring(0, conta[c][d][e][f].length - 1)
+                    var valordec = Number(str)/100
+                    conta[c][d][e][f] = valordec
                 }
+
+                conta[c][d][e][f] = Number(conta[c][d][e][f])
                 
                 console.log(conta[c][d][e][f])
-                console.log(conta[c][d][e][f][ulttermo])
-                console.log(ulttermo)
                 console.log('')
             }
         }
