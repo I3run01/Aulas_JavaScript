@@ -158,6 +158,8 @@ for(var c = 0; c < conta.length; c++) {
         conta[c][d] = conta[c][d].split('/')
         for (var e = 0; e < conta[c][d].length;e++) {
             conta[c][d][e] = conta[c][d][e].split('*')
+
+            var multiplicador = 1
             for (var f = 0; f < conta[c][d][e].length; f++) {
                 
                 const ulttermo = conta[c][d][e][f].length-1
@@ -167,11 +169,15 @@ for(var c = 0; c < conta.length; c++) {
                     conta[c][d][e][f] = valordec
                 }
 
-                conta[c][d][e][f] = Number(conta[c][d][e][f])
+                conta[c][d][e][f] = Number(conta[c][d][e][f]) 
                 
-                console.log(conta[c][d][e][f])
                 console.log('')
+
+                multiplicador = multiplicador*conta[c][d][e][f]
+                conta[c][d][e] = multiplicador
+
             }
+            console.log(conta[c][d][e])
         }
     }
 }
