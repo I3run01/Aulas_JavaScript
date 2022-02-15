@@ -3,7 +3,7 @@ listauser = []
 listaconsole = ['f']
 
 
-/*
+
 function um() {principal('1')}
 function dois() {principal('2')}
 function tres() {principal('3')}
@@ -24,26 +24,31 @@ function fechapa() {principal('(')}
 function apaga() {
     if (listauser.length <= 1){
         this.listauser = []
+        this.listaconsole = ['f']
         principal('')
     }
     else {
         this.listauser.pop()
+        this.listaconsole.pop()
         var elemf = listauser[listauser.length-1]
         this.listauser.pop()
+        this.listaconsole.pop()
         principal(elemf)
     }
     
 }
 function reseta() {
     this.listauser = []
+    this.listaconsole = ['f']
     principal('')
 }
 
 function porcentagem() {
     principal('%')
 }
-*/
 
+
+/*
 principal('2')
 principal('1')
 principal('+')
@@ -74,7 +79,7 @@ principal('0')
 principal('%')
 principal('+')
 principal('7')
-
+*/
 
 /*funções auxiliares*/
 function isNumber(a) {
@@ -112,9 +117,9 @@ function principal(a) {
     this.listaconsole.push(a)
 
     var tam = listauser.length
-    /*
+    
     var texto = document.getElementById('conta')
-    */
+    
     for (var c = 0; c < listaconsole.length; c++ ) {
         if ((isNumber(listaconsole[c]) == 'true')
             &&
@@ -137,13 +142,13 @@ function principal(a) {
     for (var c = 0; c < tam; c++) {
         equacaouser = equacaouser+listauser[c]
     }
-    /*
+    
     texto.innerHTML = equacaouser
-    */
+    
    
 }
 
-igual()
+
 function igual(){
     listaconsole.splice(0,1)
     var equacaoconsole = ''
