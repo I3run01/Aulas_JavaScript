@@ -44,9 +44,6 @@ function porcentagem() {
 }
 */
 
-
-
-
 principal('2')
 principal('1')
 principal('+')
@@ -116,9 +113,8 @@ function principal(a) {
 
     var tam = listauser.length
     /*
-    var texto = document.querySelector('#conta')
+    var texto = document.getElementById('conta')
     */
-
     for (var c = 0; c < listaconsole.length; c++ ) {
         if ((isNumber(listaconsole[c]) == 'true')
             &&
@@ -144,44 +140,59 @@ function principal(a) {
     /*
     texto.innerHTML = equacaouser
     */
+   
 }
-listaconsole.splice(0,1)
-var equacaoconsole = ''
-for (var c = 0; c < listaconsole.length; c++) {
-    equacaoconsole = equacaoconsole+listaconsole[c]
-}
-console.log(equacaoconsole)
-conta = equacaoconsole.split('+')
-for(var c = 0; c < conta.length; c++) {
-    conta[c] = conta[c].split('-')
-    for (var d = 0; d < conta[c].length; d++) {
-        conta[c][d] = conta[c][d].split('/')
-        for (var e = 0; e < conta[c][d].length;e++) {
-            conta[c][d][e] = conta[c][d][e].split('*')
 
-            var multiplicador = 1
-            for (var f = 0; f < conta[c][d][e].length; f++) {
-                
-                const ulttermo = conta[c][d][e][f].length-1
-                if (conta[c][d][e][f][ulttermo] == '%') {
-                    const str = conta[c][d][e][f].substring(0, conta[c][d][e][f].length - 1)
-                    var valordec = Number(str)/100
-                    conta[c][d][e][f] = valordec
-                }
-
-                conta[c][d][e][f] = Number(conta[c][d][e][f]) 
-                
-                console.log('')
-
-                multiplicador = multiplicador*conta[c][d][e][f]
-                conta[c][d][e] = multiplicador
-
-            }
-            console.log(conta[c][d][e])
-        }
+igual()
+function igual(){
+    listaconsole.splice(0,1)
+    var equacaoconsole = ''
+    for (var c = 0; c < listaconsole.length; c++) {
+        equacaoconsole = equacaoconsole+listaconsole[c]
     }
+
+    conta = equacaoconsole.split('+')
+    var soma = 0
+
+    for(var c = 0; c < conta.length; c++) {
+        conta[c] = conta[c].split('-')
+        var subtracao = 0
+
+        for (var d = 0; d < conta[c].length; d++) {
+            conta[c][d] = conta[c][d].split('/')
+            var divisor = 1
+
+            for (var e = 0; e < conta[c][d].length;e++) {
+                conta[c][d][e] = conta[c][d][e].split('*')
+                var multiplicador = 1
+
+                for (var f = 0; f < conta[c][d][e].length; f++) {
+                    const ulttermo = conta[c][d][e][f].length-1
+                    if (conta[c][d][e][f][ulttermo] == '%') {
+                        const str = conta[c][d][e][f].substring(0, conta[c][d][e][f].length - 1)
+                        var valordec = Number(str)/100
+                        conta[c][d][e][f] = valordec
+                    }
+                    
+                    conta[c][d][e][f] = Number(conta[c][d][e][f])
+                    multiplicador = multiplicador*conta[c][d][e][f] 
+                }
+                conta[c][d][e] = multiplicador
+                divisor = divisor*conta[c][d][e]
+            }
+            divisor = divisor/conta[c][d][0]
+            conta[c][d] = conta[c][d][0]/divisor
+
+            subtracao = conta[c][d]+subtracao
+        }
+        subtracao = subtracao-conta[c][0]
+        conta[c] = conta[c][0] - subtracao
+
+        soma = conta[c] + soma
+    }
+    conta = soma
+    conta = String(conta)
+
+    var texto = document.getElementById('resultado')
+    texto.innerHTML = conta
 }
-
-
-console.log(equacaoconsole)
-console.log(conta)
