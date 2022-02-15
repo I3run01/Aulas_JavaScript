@@ -1,7 +1,8 @@
 /*Entrada de dados do usuário*/
 listauser = []
 listaconsole = ['f']
-
+var texto = document.getElementById('conta')
+texto.innerHTML = ''
 
 
 function um() {principal('1')}
@@ -41,6 +42,7 @@ function reseta() {
     this.listauser = []
     this.listaconsole = ['f']
     principal('')
+
 }
 
 function porcentagem() {
@@ -118,7 +120,7 @@ function principal(a) {
 
     var tam = listauser.length
     
-    var texto = document.getElementById('conta')
+    
     
     for (var c = 0; c < listaconsole.length; c++ ) {
         if ((isNumber(listaconsole[c]) == 'true')
@@ -198,6 +200,7 @@ function igual(){
     conta = soma
     conta = String(conta)
 
-    var texto = document.getElementById('resultado')
     texto.innerHTML = conta
+    listauser = []
+    listaconsole = ['f']
 }

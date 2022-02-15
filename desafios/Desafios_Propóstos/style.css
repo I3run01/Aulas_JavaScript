@@ -28,16 +28,6 @@ h1 {
 
 }
 
-#resultado {
-    border-style: solid;
-    height: 50px;
-    width: 470px;
-    margin: 10px;
-    border-color: rgba(0, 0, 0, 0.315);
-    border-width: 0.7px;
-    font-size: 2em;
-
-}
 
 #button {
     width: 470px;
