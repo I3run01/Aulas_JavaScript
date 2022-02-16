@@ -8,7 +8,7 @@ function Pessoa(nome, sobrenome) {
         console.log(this.nome + ': sou um médoto')
     }
 }
-const p1 = new Pessoa ('Luiz', 'Otávio')
-const p2 = new Pessoa ('Maria', 'Oliveira')
+const p1 = new Pessoa('Luiz', 'Otávio')
+const p2 = new Pessoa('Maria', 'Oliveira')
 
 p2.metodo()
