@@ -24,3 +24,4 @@ const p1 = new Produto('Camisa', 20, 3)
 p1.estoque = 20
 console.log(p1)
 console.log(Object.keys(p1))
+
