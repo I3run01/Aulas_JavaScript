@@ -1,5 +1,5 @@
 function Pessoa(nome, sobrenome) {
-    this.nome = nome,
+    this.nome = nome
     this.sobrenome = sobrenome
 }
 

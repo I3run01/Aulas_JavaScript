@@ -1,16 +1,13 @@
 function pessoa(nome, sobrenome) {
     return {
         nome:nome,
-        sobrenome,sobrenome,
-        get nomeCompleto() {
-            return this.nome + ' ' + this.sobrenome
-        }
+        sobrenome:sobrenome,
     }
 }
 
-pessoa.prototype.nomeCompleto = () => {
-    return this.nome + ' ' + this.sobrenome
- }
+pessoa.prototype.nomeCompleto = 'André Silva'
 
 Andre = pessoa('Andre', 'Silva')
-console.dir(Andre.nomeCompleto)
+console.log(Andre.nomeCompleto)
+
+console.log(Andre.nome)
