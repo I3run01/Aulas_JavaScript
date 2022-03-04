@@ -45,7 +45,7 @@ function validacao(obj) {
     }
 }
 
-var cpf01 = new Val_CPF("113.478.759-10")
+var cpf01 = new Val_CPF("344.108.830-04")
 
 
 
