@@ -1,4 +1,4 @@
-Val_CPF.prototype.indice = function(string) {
+function termoFunc(string) {
     var lista = string.split('')
 
     var prod = 0
@@ -14,14 +14,21 @@ Val_CPF.prototype.indice = function(string) {
     if (termo > 9) return 0
     else return termo
 }
-
+   
 
 function Val_CPF(cpf) {
     this.cpf = cpf.replace(/\D+/g, '')
     this.cpf_re2 = cpf.replace(/\D+/g, '').substring(0,9)
 }
 
+
+Val_CPF.prototype.indice01 = function() {
+    return termoFunc(this.cpf_re2)
+}
+
 var cpf01 = new Val_CPF("705.484.450-52")
+
 console.log(cpf01.cpf_re2)
-console.log(cpf01.indice(cpf01.cpf_re2))
+console.log(cpf01.indice01())
+
 
