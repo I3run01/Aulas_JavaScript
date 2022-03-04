@@ -45,11 +45,11 @@ function validacao(obj) {
     }
 }
 
-var cpf01 = new Val_CPF("705.484.450-52")
-var cpf02 = new Val_CPF("070.987.720-03")
+var cpf01 = new Val_CPF("113.478.759-10")
+
+
 
 validacao(cpf01)
-validacao(cpf02)
 
 
 
