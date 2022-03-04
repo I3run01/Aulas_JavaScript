@@ -1,5 +1,4 @@
-var conta = '(2*3)+5+6*2'
+var cpf =  '12345678910111qwgwgq    '
+var retorno = cpf.substring(0,9)
 
-var resultado = eval(conta)
-
-console.log(resultado)
+console.log(retorno)
