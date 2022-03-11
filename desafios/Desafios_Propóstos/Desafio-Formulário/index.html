@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script01.js" defer></script>
 </head>
 <body>
     <section>
@@ -19,18 +20,24 @@
 
         <h2>Nome: </h2>
         <input type="text" name="nome" id="nome">
+        <p id="Pnome"></p>
         <h2>Sobrenome: </h2>
         <input type="text" name="Sobrenome" id="Sobrenome">
+        <p id="Psobrenome"></p>
         <h2>CPF: </h2>
         <input type="text" name="CPF" id="cpf">
+        <p id="Pcpf"></p>
         <h2>Usuário</h2>
         <input type="text" name="usuario" id="usuario">
+        <p id="Pusuario"></p>
         <h2>Senha: </h2>
-        <input type="text" name="senha" id="usuario">
+        <input type="text" name="senha" id="senha">
+        <p id="Psenha"></p>
         <h2>Repetir senha: </h2>
         <input type="text" name="RepetirSenha" id="RepetirSenha">
+        <p id="Prepetirsenha"></p>
 
-        
+        <input type="submit" value="Enviar" id="enviar" onclick="Enviar()">
     </section>
     
 </body>

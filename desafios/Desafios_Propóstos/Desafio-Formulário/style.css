@@ -37,3 +37,17 @@ input {
     width: 70vw;
 
 }
+
+#enviar {
+    border: none;
+    background-color: rgb(7, 121, 96);
+    color: white;
+    height: 35px;
+    
+}
+
+#enviar:hover {
+    background-color: rgb(0, 48, 37);
+    pointer-events: painted;
+
+}
