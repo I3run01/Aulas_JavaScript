@@ -1,15 +1,15 @@
 class Usuario {
     constructor() {
-        this.nome
-        this.sobrenome
-        this.cpf
-        this.usuario
-        this.senha
-        this.repetirsenha
+        this.nome = 'undefined'
+        this.sobrenome = 'undefined'
+        this.cpf = 'undefined'
+        this.usuario = 'undefined'
+        this.senha = 'undefined'
+        this.repetirsenha = 'undefined'
     }
 
     SetNome(valor) {
-        if (valor.length <= 0)  return false
+        if (valor.length <= 0 )  return false
         else {
             this.nome = valor 
             return true
