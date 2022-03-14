@@ -95,7 +95,7 @@ class Usuario extends CPF {
     }
 
     SetSenha(senha01, senha02) {
-        if(senha01 == senha02 && senha01.length > 6 && senha01.length < 12 ) this.senha = senha01
+        if(senha01 == senha02 && senha01.length >= 6 && senha01.length <= 12 ) this.senha = senha01
     }
 
     GetSenha() {
@@ -111,12 +111,12 @@ function Enviar() {
     const user = new Usuario()
 
     
-    var nome = document.getElementById('nome')
-    var Sobrenome = document.getElementById('Sobrenome')
-    var cpf = document.getElementById('cpf')
-    var usuario = document.getElementById('usuario')
-    var senha = document.getElementById('senha')
-    var RepetirSenha = document.getElementById('RepetirSenha')
+    var nome = document.getElementById('nome').value
+    var Sobrenome = document.getElementById('Sobrenome').value
+    var cpf = document.getElementById('cpf').value
+    var usuario = document.getElementById('usuario').value
+    var senha = document.getElementById('senha').value
+    var RepetirSenha = document.getElementById('RepetirSenha').value
 
     var pnome = document.getElementById('Pnome')
     var PsobreSobrenome = document.getElementById('Psobrenome')
@@ -124,13 +124,6 @@ function Enviar() {
     var Pusuario = document.getElementById('Pusuario')
     var Psenha = document.getElementById('Psenha')
     var Prepetirsenha = document.getElementById('Prepetirsenha')
-
-    pnome.innerHTML = nome.value
-    PsobreSobrenome.innerHTML = Sobrenome.value
-    Pcpf.innerHTML = cpf.value
-    Pusuario.innerHTML = usuario.value
-    Psenha.innerHTML = senha.value
-    Prepetirsenha.innerHTML = RepetirSenha.value
 
     user.SetNome(nome)
     user.SetSobrenome(Sobrenome)
@@ -143,6 +136,60 @@ function Enviar() {
     user.GetCPF()
     user.GetUsuario()
     user.GetSenha()
+
+    if (user.GetNome() == 'nd'){
+        pnome.innerHTML = 'Nome deve estar preenchido'
+        pnome.style.color = 'red'
+
+    } 
+    else {
+        pnome.innerHTML = 'ok'
+        pnome.style.color = 'green'
+    }
+
+    if (user.GetSobrenome() == 'nd') {
+        PsobreSobrenome.innerHTML = 'Sobrenome deve estar preenchido'
+        PsobreSobrenome.style.color = 'red'
+    }
+    
+    else {
+        PsobreSobrenome.innerHTML = 'ok'
+        PsobreSobrenome.style.color = 'green'
+    }
+
+    if (user.GetCPF() == 'nd') {
+        Pcpf.innerHTML = 'CPF inválido'
+        Pcpf.style.color = 'red'
+
+    } 
+    else {
+        Pcpf.innerHTML = 'ok'
+        Pcpf.style.color = 'green'
+    }
+
+    if (user.GetUsuario() == 'nd') {
+        Pusuario.innerHTML = 'Nome de usuário inválido'
+        Pusuario.style.color = 'red'
+    } 
+    else {
+        Pusuario.innerHTML = 'ok'
+        Pusuario.style.color = 'green'
+    }
+
+    if (user.GetSenha() == 'nd') {
+        Psenha.innerHTML = 'Senha invalida'
+        Prepetirsenha.innerHTML = 'Senha invalida'
+        Psenha.style.color = 'red'
+        Prepetirsenha.style.color = 'red'
+
+    } 
+    else {
+        Psenha.innerHTML = 'ok'
+        Prepetirsenha.innerHTML = 'ok'
+        Psenha.style.color = 'green'
+        Prepetirsenha.style.color = 'green'
+    }
+
 }
 
 
