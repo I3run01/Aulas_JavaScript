@@ -15,9 +15,12 @@ class CPF {
         const CPFvalido = () => this.validacaoCPF(termoRes,DoisUltNumeros())
 
         if(CPFvalido() == true) this.cpf = NovoCPF
-        else this.cpf = undefined
         
+    }
 
+    GetCPF() {
+        if(this.cpf == undefined) return 'nd'
+        else return this.cpf
     }
 
     validacaoCPF(termoRes, DoisUltNumeros) {
@@ -54,32 +57,50 @@ class Usuario extends CPF {
         this.sobrenome
         this.usuario
         this.senha
-        this.repetirsenha
+
     }
 
     SePreenchido(valor) {
         if (valor.length <= 0 )  return false
-
-        else {
-        return true
-        } 
+        else return true     
     }
 
     SetNome(valor) {
-        if (this.SePreenchido(valor) == true) {
-            this.nome = valor
-            return ''
-        }
-        else return 'Você não preecheu a aba Nome'
+        if (this.SePreenchido(valor) == true) this.nome = valor
+    }
+
+    GetNome() {
+        if(this.nome == undefined) return 'nd'
+        else return this.nome
     }
 
     SetSobrenome(valor) {
-        if (this.SePreenchido(valor) == true) {
-            this.sobrenome = valor
-            return ''
+        if (this.SePreenchido(valor) == true) this.sobrenome = valor
+    }
 
-        }
-        else return 'Você não preecheu a aba Sobrenome'
+    GetSobrenome() {
+        if(this.sobrenome == undefined) return 'nd'
+        else return this.sobrenome
+    }
+
+    SetUsuario(valor) {
+        const VetorUsuario = valor.split('')
+        const regex = /\W|_/;
+        if (regex.test(valor) == false && this.SePreenchido(valor) == true) this.usuario = valor   
+    }
+
+    GetUsuario() {
+        if(this.usuario == undefined) return 'nd'
+        else return this.usuario
+    }
+
+    SetSenha(senha01, senha02) {
+        if(senha01 == senha02 && senha01.length > 6 && senha01.length < 12 ) this.senha = senha01
+    }
+
+    GetSenha() {
+        if(this.senha == undefined) return 'nd'
+        else return this.senha
     }
 }
 
@@ -89,20 +110,41 @@ function Enviar() {
 
     const user = new Usuario()
 
-    /*
-    var nome = document.getElementById('nome')
-    var pnome = document.getElementById('Pnome')
-    user.SetNome(nome)
-    pnome.innerHTML = user.SetNome()
-    */
-
-    user.SetCPF('113.468.759-10')
-    console.log(user.cpf)
     
+    var nome = document.getElementById('nome')
+    var Sobrenome = document.getElementById('Sobrenome')
+    var cpf = document.getElementById('cpf')
+    var usuario = document.getElementById('usuario')
+    var senha = document.getElementById('senha')
+    var RepetirSenha = document.getElementById('RepetirSenha')
 
+    var pnome = document.getElementById('Pnome')
+    var PsobreSobrenome = document.getElementById('Psobrenome')
+    var Pcpf = document.getElementById('Pcpf')
+    var Pusuario = document.getElementById('Pusuario')
+    var Psenha = document.getElementById('Psenha')
+    var Prepetirsenha = document.getElementById('Prepetirsenha')
+
+    pnome.innerHTML = nome.value
+    PsobreSobrenome.innerHTML = Sobrenome.value
+    Pcpf.innerHTML = cpf.value
+    Pusuario.innerHTML = usuario.value
+    Psenha.innerHTML = senha.value
+    Prepetirsenha.innerHTML = RepetirSenha.value
+
+    user.SetNome(nome)
+    user.SetSobrenome(Sobrenome)
+    user.SetCPF(cpf)
+    user.SetUsuario(usuario)
+    user.SetSenha(senha, RepetirSenha)
+
+    user.GetNome()
+    user.GetSobrenome()
+    user.GetCPF()
+    user.GetUsuario()
+    user.GetSenha()
 }
 
-Enviar()
 
 
 
