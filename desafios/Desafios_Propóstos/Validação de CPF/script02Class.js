@@ -1,14 +1,22 @@
 class CPF {
-    constructor(cpf) {
-        this.cpf = cpf.replace(/\D+/g,'');
-        this.cpf09 = () => this.cpf.slice(0,9)
-        this.cpf10 = () => this.cpf.slice(0,10)
-        this.termo01 = () => this.validacao(this.cpf09())
-        this.termo02 = () => this.validacao(this.cpf10())
-        this.termoRes = String(this.termo01()) +  String(this.termo02())
-        this.DoisUltNumeros = () => this.cpf.slice(9,11)
+    constructor() {
+        this.cpf
+    }
 
-        this.CPFvalido = () => this.validacaoCPF(this.termoRes,this.DoisUltNumeros())
+    SetCPF(cpf) {
+        const NovoCPF = cpf.replace(/\D+/g,'');
+        const cpf09 = () => NovoCPF.slice(0,9)
+        const cpf10 = () => NovoCPF.slice(0,10)
+        const termo01 = () => this.validacao(cpf09())
+        const termo02 = () => this.validacao(cpf10())
+        const termoRes = String(termo01()) +  String(termo02())
+        const DoisUltNumeros = () => NovoCPF.slice(9,11)
+
+        const CPFvalido = () => this.validacaoCPF(termoRes,DoisUltNumeros())
+
+        if(CPFvalido() == true) this.cpf = NovoCPF
+        else this.cpf = undefined
+        
 
     }
 
@@ -39,5 +47,6 @@ class CPF {
     }
 }
 
-cpf01 = new CPF("705.484.450-52")
-console.log(cpf01.CPFvalido())
+cpf01 = new CPF()
+cpf01.SetCPF("705.484.450-52")
+console.log(cpf01.cpf)
