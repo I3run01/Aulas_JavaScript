@@ -1,1 +1,3 @@
 Aula Aluira: https://www.alura.com.br/artigos/comecando-com-fetch-no-javascript
+
+Bicliotecas necessárias: https://www.npmjs.com/package/node-fetch
