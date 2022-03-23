@@ -10,14 +10,14 @@ function esperaAi(msg, tempo) {
 }
 
 /*
-esperaAi('Frase 1', 800)
+esperaAi('Fase 1', 800)
 .then(valor => {
     console.log(valor)
-    return esperaAi('Frase 2', 200)
+    return esperaAi('Fase 2', 200)
 })
 .then(fase => {
     console.log(fase)
-    return esperaAi('Frase 3', 400)
+    return esperaAi('Fase 3', 400)
 })
 .then(fase3 => {
     console.log(fase3)
@@ -46,6 +46,7 @@ async function executa() {
 }
 
 executa()
+
 
 //pending -> pendente
 //fullfilled - resolvida
