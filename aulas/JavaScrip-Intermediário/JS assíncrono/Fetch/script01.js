@@ -6,11 +6,11 @@ const url = `https://viacep.com.br/ws/${valorDoCep}/json/`;
 
 fetch(url)
     .then(response => response.json())
-    .then(dados => atrinuirdados(dados))
+    .then(dados => atribuirdados(dados))
     
 
 
-atrinuirdados = (dados) => {
+atribuirdados = (dados) => {
     const bairro = dados.bairro
     const cidade = dados.localidade
 
