@@ -1,8 +1,10 @@
 let nome = 'Bonieky Lacerda Leal'
 
-console.log(nome.length) //->Tamanho da string
+let const1 = nome.length //->Tamanho da string
+let const2 = nome.indexOf('Lacerda') //A onde começa o lacerda - > Se não achar, retorna -1
 
-console.log(nome.indexOf('Lacerda')) //Se tem Lacerda em nome - > Se não achar, retorna -1
+console.log(const1)
+console.log(const2)
 
 //Condicional se tem ou não Lacerda na String
 if(nome.indexOf('ghef') > -1 ) {
