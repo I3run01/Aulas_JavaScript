@@ -4,7 +4,7 @@ class CPF {
     }
 
     SetCPF(cpf) {
-        const NovoCPF = cpf.replace(/\D+/g,'');
+        const NovoCPF = cpf.replace(/\D/g,'');
         const cpf09 = () => NovoCPF.slice(0,9)
         const cpf10 = () => NovoCPF.slice(0,10)
         const termo01 = () => this.validacao(cpf09())
