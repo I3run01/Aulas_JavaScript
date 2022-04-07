@@ -1,15 +1,8 @@
 function loadPosts() {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-        .then((resultado)=>{
-            return resultado.json()
-        })
-        .then((json)=> {
-            console.log(json)
-            montarBlog(json)
-        })
-        .catch(()=>{
-            console.log('Deu problema')
-        })
+    fetch('https://jsonplaceholder.typicode.com/posts')  //Requisição
+        .then(r=> r.json())  //Abre a a versão em JSON  
+        .then( j=> montarBlog(j) ) //Joga o Json na função que preciso
+        .catch( e=> console.log('Deu problema')) //Se erro
 }
 
 function montarBlog(lista) {
