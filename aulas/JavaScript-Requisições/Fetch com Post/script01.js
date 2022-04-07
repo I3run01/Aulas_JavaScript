@@ -11,7 +11,7 @@ async function inserirPost() {
             
         }),
         headers: {
-            'Content-Type': 'application/json' //Só manda a minha requisição
+            'Content-Type': 'application/json' //Para criar suas próprias JSON
         }
     })
 
