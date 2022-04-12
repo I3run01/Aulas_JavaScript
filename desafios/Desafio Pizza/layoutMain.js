@@ -1,13 +1,14 @@
 let main = document.querySelector('#container')
 let texto = ''
 
-let img = document.createElement('img')
+
 for (let i of pizzas ) {
     texto += '<div>'
-    texto += `<img src="${i.foto}" alt=""> <br>`
-    texto += i.preco + '<br>'
-    texto += i.nome + '<br>'
-    texto += i.descriao + '<br>'
+    texto += `<div><img src="${i.foto}" alt="">`
+    texto += '<button> + </button></div>'
+    texto += `<p> R$ ${i.preco}</p>`
+    texto += `<h1> ${i.nome}</h1>`
+    texto += `<p>${i.descriao}<p>`
     texto += '</div>'
 }
 
