@@ -1,7 +1,5 @@
-document.addEventListener('click', valor)
+function valor(v) {
+    let valor = v
 
-function valor() {
-    let valor = document.querySelector('.btn').value
-
-    let text = document.querySelector('#text').innerHTML = valor
+    let text = document.querySelector('#text').innerHTML = v
 }
