@@ -2,7 +2,7 @@
 
 body {
     display: grid;
-    grid-template-columns: 3fr 1fr ;
+    grid-template-columns: 2fr 1fr ;
     grid-template-areas: 
     "nav nav"
     "main aside"  
@@ -86,5 +86,49 @@ main p {
 
 aside {
     grid-area: aside;
-    background-color: yellow;
+    background-color: rgb(173, 255, 245);
+    padding: 20px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.284);
+}
+
+
+aside h1 {
+    font-weight: bold;
+    font-size: 1.5em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.377);
+    padding-bottom: 20px;
+    margin: 0;
+}
+
+#conta {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.377);
+}
+
+#TotalDiv {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5em;
+    font-weight: bold;
+
+
+}
+
+aside button {
+    text-align: center;
+    width: 80%;
+    height: 50px;
+    border-radius: 20px;
+    background-color: greenyellow;
+    font-size: 1.2em;
+    margin-left: 10%;
+}
+
+#lpizzas {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.377);
+    padding: 15px;
+
 }
