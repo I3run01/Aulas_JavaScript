@@ -24,11 +24,3 @@ let pizzas = [
     new Pizza ('Calabresa', 'hsagfihdfb', 18.99, 'imagens/pizza2.png')
 ]
 
-function addPizza() {
-    let obj = document.querySelector('.btn').value
-    let resp = document.querySelector('.btn').innerHTML = obj
-    obj.AdicionarPizza()
-    
-    
-
-}
