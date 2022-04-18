@@ -5,6 +5,7 @@ class Pizza {
         this.preco = preco
         this.foto = foto
         this.quantidade = 0
+        this.tamanho = null
 
     }
 
@@ -16,6 +17,14 @@ class Pizza {
     DiminuirPizza() {
         this.quantidade -- 
     }
+
+    set tamanho(valor) {
+        if (valor == 'pequena') this.tamanho = 'peqeuna'
+        else if (valor == 'media') this.tamanho = 'media'
+        else this.tamanho = 'grande'
+    } 
+
+    
 
 }
 
