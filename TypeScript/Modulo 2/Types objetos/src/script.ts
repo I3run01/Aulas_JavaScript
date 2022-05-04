@@ -1,4 +1,4 @@
-function resumo(usuario: {nome: string, idade: number}) {
+function res(usuario: {nome: string, idade?: number}) {
     return `Olá ${usuario.nome} você tem ${usuario.idade} anos`
 }
 
@@ -7,4 +7,7 @@ let u = {
     idade: 90
 }
 
-resumo(u)
+res(u)
+
+
+//idade?: Passa a ser opcional
