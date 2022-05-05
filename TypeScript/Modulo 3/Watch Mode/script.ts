@@ -1,2 +1,0 @@
-const nome: string = 'Bonieky'
-
